@@ -1,0 +1,149 @@
+:root {
+  --primary: #4c6986;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0%;
+}
+
+body {
+  font-family: "Merriweather Sans", sans-serif;
+  color: var(--primary);
+}
+
+.container {
+  /* background-color: yellow; */
+  /* border: 2px solid red; */
+  height: 800px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px;
+}
+
+.title {
+  font-size: 50px;
+  max-width: 500px;
+}
+
+.left .restart {
+  width: 175px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 1px solid var(--primary);
+  transition: all 0.2s ease;
+  margin-top: 30px;
+}
+
+.restart:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+/* .right {
+  border: 2px solid red;
+} */
+.game {
+  /* border: 2px solid yellow; */
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  color: #9a9a9a;
+  font-size: 24px;
+  /* border-bottom: 1px solid #eee; */
+  /* justify-content: space-between; */
+}
+
+.player-X {
+  border-bottom: 2px solid #eee;
+  flex: 1;
+  padding-bottom: 8px;
+}
+
+.player-X.active {
+  color: #42bed7;
+  border-color: #42bed7;
+}
+
+.tile-X {
+  color: #42bed7;
+}
+
+.tile-O {
+  color: #d7bafb;
+}
+
+.tile-winner span {
+  color: #23ce6b;
+}
+
+.player-O.active {
+  color: #d7bafb;
+  border-color: #d7bafb;
+}
+
+.player-O {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+  flex: 1;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  flex-grow: 1;
+}
+
+.board-tile {
+  /* border: 2px solid gray; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  cursor: pointer;
+}
+
+.board-tile:hover {
+  background-color: #eee;
+}
+
+.board-tile:not(:nth-child(3n)) {
+  border-right: 3px solid rgba(137, 163, 189, 0.7);
+}
+
+.board-tile:not(:nth-last-child(-n + 3)) {
+  border-bottom: 3px solid rgba(137, 163, 189, 0.7);
+}
+
+@media all and (max-width: 1200px) {
+  body {
+    padding: 20px;
+  }
+  .container {
+    flex-direction: column;
+  }
+
+  .left .title {
+    font-size: 30px;
+  }
+
+  .right {
+    max-width: 500px;
+  }
+
+  .left {
+    margin-bottom: 50px;
+  }
+}
